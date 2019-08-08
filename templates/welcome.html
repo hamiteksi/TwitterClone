@@ -1,0 +1,56 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<div class="container-fluid pl-0 pr-0">
+  <div class="row">
+      <div class="col-6 d-none d-lg-block d-sm-none" >
+          <div class="col" style="height: 200%; background-image: url('https://i.imgur.com/wk1yXhV.png')"></div>
+      </div>
+      <div class="col col-md-6 col-lg-6 d-sm-block">
+          <form class="ml-2" method="POST" action="/user/login/">
+              {% csrf_token %}
+            <div class="form-row align-items-center mt-4">
+                <div class="col-auto" style="width: 35%">
+                <label class="sr-only" for="inlineFormInput"></label>
+                <input name="username" type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Telefon, e-posta veya kullanıcı adı">
+                </div>
+                <div class="col-auto" style="width: 35%">
+                <label class="sr-only" for="inlineFormInputGroup">Sifre</label>
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                    </div>
+                    <input name="password" type="password" class="form-control" id="inlineFormInputGroup" placeholder="Sifre">
+                </div>
+                </div>
+                <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                </div>
+            </div>
+            <a href="/forget/" class="text-secondary">Sifreni mi unuttun?</a>
+              {% if error %}
+              <hr>
+              <div style="color: red">{{ error }}</div>
+              <hr>
+              {% endif %}
+        </form>
+        <div class="row h-100">
+            <div class="col-2"></div>
+                <div id="col-8" class="col-7 my-auto" style="margin-bottom: auto; margin-top: auto; display: inline-block; vertical-align: middle">
+                    <img src="http://pluspng.com/img-png/twitter-logo-png-icons-logos-emojis-tech-companies-1687.png" width="60" height="60" alt="">
+                    <h3>Su anda dunyada neler olup bittigini gor</h3>
+                    <br class="m-4">
+                    <h5>Twitter'a bugun katil</h5>
+                    <!-- <button type="button" class="btn btn-primary btn-lg btn-block">Kaydol</button> -->
+                    <!-- Button trigger modal -->
+                    <a href="/user/signup/" class="btn btn-primary btn-lg btn-block" >
+                            Kaydol
+                    </a>
+                </div>
+                <div class="col-3"></div>
+                </div>
+      </div>
+  </div>
+</div>
+
+  {% endblock %}

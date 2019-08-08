@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% include 'base/head.html' %}
+
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>Twitter! </title>
+    {% endif %}
+
+</head>
+<body>
+
+
+<!--{% include 'base/message.html' %}-->
+
+{% block content %}
+{% endblock %}
+
+
+{% include 'base/footer.html' %}
+
+</body>
+</html>

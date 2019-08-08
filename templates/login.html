@@ -1,0 +1,33 @@
+{% extends 'base/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+{% include 'base/navbar.html' %}
+<div class="container">
+    <div class="row border border-light shadow-sm mt-3" style="background-color: white">
+        <div class="col-2"></div>
+        <div class="col-8 mt-4">
+            <h4>Twitter'a giris yap</h4>
+            <form class="mt-4 ml-3" method="POST">
+                {% csrf_token %}
+                <form class="form-inline">
+                    <div class="form-group row">
+                        <div class="col col-md-6 col-lg-6 d-sm-block">
+                            <div class="form-group">
+                                {{ form|crispy }}
+                                <button type="submit" class="btn btn-primary">Giris yap</button>
+                            </div>
+                        </div>
+                </form>
+            </form>
+        </div>
+        <div class="col-2"></div>
+    </div>
+
+    {% include 'base/footer-login.html'%}
+</div>
+
+
+{% endblock %}
